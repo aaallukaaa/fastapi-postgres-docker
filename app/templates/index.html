@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="wrapper">
+  <div class="title">{{ APP_NAME }}</div>
+  <form class="form-inline" method="post" action="{{ url_for('add_task') }}">
+    <div class="form-group mx-sm-3 mb-2">
+      <label class="sr-only">Task's description</label>
+      <input type="text" class="form-control" name="title" placeholder="Task's description">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Confirm creation</button>
+  </form>
+
+  <div class="card" style="width: 24rem;">
+    <div class="card-body">
+      <h5 class="card-title">Task #{{ task.id }}</h5>
+      <p class="card-text">{{ task.title }}</p>
+        {% if task.id == 0 %}
+        {% elif task.is_completed == False %}
+      <a href="{{ url_for('update_task', task_id=task.id) }}" class="card-link">Close</a>
+        {% else %}
+      <a href="{{ url_for('update_task', task_id=task.id) }}" class="card-link">Open</a>
+        <a href="{{ url_for('delete_task', task_id=task.id) }}" class="card-link">Delete</a>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

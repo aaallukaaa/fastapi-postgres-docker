@@ -1,0 +1,29 @@
+html, body {
+    height: 100%;
+}
+html {
+    display: table;
+    margin: auto;
+}
+body {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+.wrapper {
+    background-color: rgb(252, 252, 252);
+    padding: 50px 50px 90px 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 25px;
+}
+
+.title {
+    vertical-align: center;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 40px;
+}
